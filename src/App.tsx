@@ -11,7 +11,7 @@ function App() {
     <>
       <Provider store={store}>
         <ThemeProvider>
-          <RouterProvider router={router} />
+          <RouterProvider router={router}   />
         </ThemeProvider>
       </Provider>
     </>
