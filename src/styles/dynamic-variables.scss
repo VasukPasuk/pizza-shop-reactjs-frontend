@@ -1,0 +1,17 @@
+@import 'colors';
+
+:root {
+  --sides-offset: 64px;
+  @media screen and (width <= 1000px) {
+    --sides-offset: 48px;
+  }
+  @media screen and (width <= 768px) {
+    --sides-offset: 32px;
+  }
+  @media screen and (width <= 420px) {
+    --sides-offset: 20px;
+  }
+  @media screen and (width <= 320px) {
+    --sides-offset: 12px;
+  }
+}

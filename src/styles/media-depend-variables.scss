@@ -1,0 +1,27 @@
+@import "mixins";
+
+$page-sides-offset-all: 4rem;
+$page-sides-offset-1200: 3.5rem;
+$page-sides-offset-922: 3rem;
+$page-sides-offset-768: 2rem;
+$page-sides-offset-420: 1rem;
+$page-sides-offset-360: 0.5rem;
+$page-sides-offset-320: 0.5rem;
+
+@import 'colors';
+
+:root {
+  --sides-offset: #{$page-sides-offset-all};
+  @include media-992 {
+    --sides-offset: #{$page-sides-offset-922};
+  }
+  @include media-768{
+    --sides-offset: #{$page-sides-offset-768};
+  }
+  @include media-420{
+    --sides-offset: #{$page-sides-offset-420};
+  }
+  @include media-360{
+    --sides-offset: #{$page-sides-offset-360};
+  }
+}

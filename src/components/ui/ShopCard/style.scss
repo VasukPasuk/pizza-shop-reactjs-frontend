@@ -1,0 +1,196 @@
+@import '../../../styles/colors';
+@import '../../../styles/static-variables';
+@import '../../../styles/mixins';
+
+.product-shop-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s ease background;
+  background: var(--card-bg-color);
+  border-radius: 0.5rem;
+  padding: 1rem .75rem;
+  gap: 0.75rem;
+  color: var(--shop-card-color);
+  box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.125);
+
+  &[data-in-cart='true'] {
+    background: var(--card-in-card-state-bg);
+  }
+
+  .tags-and-action-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    .product-shop-cart__tags-box {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      align-items: center;
+
+      .card-tag {
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+      }
+
+      .discount-tag {
+        background: transparentize(#ffb800, 0.2);
+        color: black;
+        font-weight: 600;
+      }
+
+      .popular-tag {
+        background: transparentize(#0047ff, 0.3);
+      }
+    }
+
+    .action-menu-wrapper {
+      position: relative;
+
+      .product-shop-cart__ellipsis-action-trigger {
+        font-size: 2rem;
+        background: transparent;
+        border-radius: .25rem;
+        transition: .25s ease background;
+        padding: .25rem;
+        cursor: pointer;
+
+        &:hover {
+          background: transparentize(#fff, 0.9);
+        }
+      }
+
+      .product-shop-cart__action-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        position: absolute;
+        top: 100%;
+        right: 100%;
+        transform: translateY(-50%);
+        background: rgba(29, 33, 41, 0.2);
+        backdrop-filter: blur(10px);
+        border: 1px solid transparentize(#00F0FF, 0.7);
+        border-radius: 0.25rem;
+        z-index: 100;
+        color: white;
+
+        .product-shop-cart__action-menu__option {
+          white-space: nowrap;
+          padding: 0.5rem 0.5rem;
+          background: rgba(29, 33, 41, 0.05);
+          backdrop-filter: blur(10px);
+          width: 100%;
+          cursor: pointer;
+          transition: background .25s ease, backdrop-filter .25s ease;
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(100px);
+          }
+
+          &:nth-child(2) {
+            position: relative;
+
+            &:hover {
+              .product-shop-cart__action-menu__option__title__micropt-box {
+                display: flex;
+              }
+            }
+            .product-shop-cart__action-menu__option__title {
+
+            }
+
+            .product-shop-cart__action-menu__option__title__micropt-box {
+              position: absolute;
+              display: none;
+              flex-direction: column;
+              left: 100%;
+              top: 0;
+              background: rgba(29, 33, 41, 0.75);
+              backdrop-filter: blur(50px);
+              width: 100%;
+              cursor: pointer;
+              transition: background .25s ease, backdrop-filter .25s ease;
+              border: 1px solid transparentize(#00F0FF, 0.7);
+              & > li {
+                padding: 0.5rem 0.5rem;
+                transition: background .25s ease, backdrop-filter .25s ease;
+                &:hover {
+                  background: rgba(255, 255, 255, 0.1);
+                  backdrop-filter: blur(100px);
+                }
+              }
+            }
+
+          }
+
+        }
+
+      }
+    }
+  }
+
+  .pizza-image {
+    border-radius: .25rem;
+  }
+
+  .pizza-name-box {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .category-name-box {
+    font-size: 1.125rem;
+    font-weight: 500;
+  }
+
+  .select-separator {
+    color: #4a4a4a;
+  }
+
+  .select-size-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    @include product-cart-select-button
+  }
+
+  .select-flour-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    @include product-cart-select-button
+  }
+
+  .price-and-button-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    .price-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: .75rem;
+
+      .price-box__current-price {
+        font-size: 1.25rem;
+      }
+
+      .price-box__previous-price {
+        font-size: 1.1rem;
+        text-decoration: line-through;
+      }
+    }
+  }
+}

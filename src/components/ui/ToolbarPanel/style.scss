@@ -1,0 +1,128 @@
+@import '../../../styles/colors';
+@import '../../../styles/static-variables';
+@import '../../../styles/mixins';
+
+
+
+
+
+
+
+#toolbar-panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+
+  .tools-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    .tool-button {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 0.25rem;
+      background: transparent;
+      transition: 0.325s background ease;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.25rem;
+
+      & > svg {
+      }
+
+      & > span {
+      }
+    }
+  }
+
+  .search-part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    height: 100%;
+
+    #search-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 0.1rem 0.2rem;
+      background: transparentize(#fff, 0.75);
+      border-radius: 0.25rem;
+      transition: 0.325s ease background;
+
+      &:hover {
+        background: transparentize(#fff, 0.8);
+        cursor: pointer;
+      }
+
+      svg {
+        font-size: 1.75rem;
+      }
+    }
+
+    .search-input__wrapper {
+      position: relative;
+
+      #search-input {
+        border: none;
+        outline: none;
+        height: 100%;
+        width: 16rem;
+        padding: 0.425rem 0.75rem;
+        border-radius: 0.25rem;
+        background: transparentize(#fff, 0.9);
+        box-sizing: border-box;
+        transition: .25s ease background;
+
+        &[data-has-text="true"] {
+          background: transparentize(#fff, 0.8);
+        }
+      }
+      #remove-search-text-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: var(--simple-text-color);
+        font-size: 2rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+html:has([data-theme="dark"]) {
+  #search-input {
+    border-bottom: transparent !important;
+  }
+  #toolbar-panel {
+    .tool-button {
+      &:hover {
+        background: transparentize(#fff, 0.75);
+        cursor: pointer;
+      }
+    }
+  }
+
+}
+
+html:has([data-theme="light"]) {
+  #search-input {
+    border-bottom: 1px solid rgba(0,0,0,0.2) !important;
+  }
+  #toolbar-panel {
+    .tool-button {
+      &:hover {
+        background: transparentize(#000, 0.925);
+        cursor: pointer;
+      }
+    }
+  }
+}

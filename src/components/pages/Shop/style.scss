@@ -1,0 +1,35 @@
+@import '../../../styles/colors';
+@import '../../../styles/static-variables';
+@import '../../../styles/mixins';
+
+#shop-page__container {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  padding: 0 var(--sides-offset);
+  .product-shop-cards__section {
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+    gap: 2rem;
+    padding: 1rem 0;
+
+  }
+  @include media-custom(1300px) {
+    .product-shop-cards__section {
+      grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    }
+  }
+  @include media-992 {
+    .product-shop-cards__section {
+      grid-template: repeat(4, 1fr) / repeat(2, 1fr);
+    }
+  }
+
+  @include media-custom(620px) {
+    .product-shop-cards__section {
+      grid-template: repeat(8, 1fr) / repeat(1, 1fr);
+    }
+  }
+}
+
+

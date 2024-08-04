@@ -1,0 +1,35 @@
+@import '../../../styles/colors';
+@import '../../../styles/static-variables';
+
+#upper-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem 0 1rem;
+  height: $upper-bar-height;
+  width: 100%;
+  border-bottom: 1px solid $borders-color;
+
+  .upper-bar__left-side {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    .upper-bar__left-side__menu-switcher {
+      cursor: pointer;
+      transition: 0.5s ease color;
+      &:hover {
+        color: #4a4a4a;
+      }
+    }
+    .upper-bar__left-side__breadcrumbs-box {
+      color: #838383;
+    }
+  }
+  .upper-bar__right-side {
+    color: #838383;
+  }
+}

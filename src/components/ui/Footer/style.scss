@@ -1,0 +1,120 @@
+@import '../../../styles/colors';
+@import '../../../styles/mixins';
+
+#footer_component {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 4rem var(--sides-offset) 1rem var(--sides-offset);
+  @include media-768 {
+    row-gap: 2rem;
+  }
+  .footer-up {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    column-gap: 4rem;
+    @include media-1200 {
+      column-gap: 2rem;
+    }
+    @include media-768 {
+      flex-direction: column;
+      row-gap: 3rem;
+      column-gap: 0;
+    }
+
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+
+      .footer-column-head {
+        white-space: nowrap;
+        font-weight: bold;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--footer-col-head-text-color);
+        transition: 0.5s ease color;
+      }
+
+      .footer-column-body {
+        color: var(--footer-col-body-text-color);
+        transition: 0.5s ease color;
+      }
+    }
+
+    .links-col {
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      //.footer-link-box {
+      //  display: flex;
+      //  flex-direction: row;
+      //  gap: 1rem;
+      //  justify-content: center;
+      //  align-items: center;
+      //}
+    }
+
+    .contacts-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        white-space: nowrap;
+      }
+
+      .footer-contact-box {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        justify-content: start;
+        align-items: center;
+
+        svg {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .follow-col {
+      .footer-column-body {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        svg {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .footer-down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--footer-col-head-text-color);
+    transition: 0.5s ease color;
+    padding: 1rem 0;
+  }
+
+  &[data-has-shadow='true'] {
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+  }
+}

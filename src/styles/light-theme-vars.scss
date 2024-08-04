@@ -1,0 +1,33 @@
+@import "colors";
+
+
+html[theme='light'] {
+  --header-text-color: #2d2d2d;
+  --header-hover-text-color: rgb(31 41 55);
+
+  --body-bg-color: #ffffff;
+
+  --tabs-color: #{rgb(0,0,0)};
+  --tabs-hover-bg-color: #{rgba(0,0,0, 0)};
+  --tabs-default-bg-color: #{rgb(0,0,0, 0)};
+  --tabs-shadow: rgba(0, 0, 0, 0.2);
+
+  --shop-card-color: #{#1C1C1C};
+  --shop-card-hover-bg-color: #{transparentize(#457699, .5)};
+  --shop-card-default-bg-color: #{transparentize(#457699, .75)};
+  --shop-card-shadow: rgba(0, 0, 0, 0.1);
+  --card-bg-color: #{$bg-gray-50};
+  --card-in-card-state-bg: #{$bg-gray-200};
+  --shop-card-select-btn-color:#{$bg-neutral-500};
+  --shop-card-select-btn-color-active: #{$bg-neutral-900};
+
+  --pizza-description-zones-bg: rgba(255, 255, 255, 0.1);
+  --pizza-description-zones-tab-bg:  rgba(255, 255, 255, 0.1);
+  --pizza-description-zones-tab-bg-hover: rgba(255, 255, 255, 0.15);
+  --pizza-description-zones-tab-bg-active: rgba(255, 255, 255, 0.1);
+
+  --footer-col-head-text-color: #{$bg-gray-800};
+  --footer-col-body-text-color: #{$bg-gray-700};
+
+  --simple-text-color: #{$bg-gray-800};
+}

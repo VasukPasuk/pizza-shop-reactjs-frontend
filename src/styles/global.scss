@@ -1,0 +1,130 @@
+@import "colors";
+@import "dark-theme-vars";
+@import "light-theme-vars";
+@import "dynamic-variables";
+
+
+html {
+  font-size: 16px;
+}
+
+body {
+  min-height: 100%;
+  background: var(--body-bg-color);
+
+  #root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: var(--simple-text-color);
+    min-height: 100dvh;
+  }
+}
+
+
+// _reset.scss
+
+// Reset all elements to have no margin, padding, border, etc.
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: Inter, sans-serif;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+// Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed
+ul,
+ol {
+  list-style: none;
+}
+
+// Reset table styles
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// Reset the default display of block and inline elements
+body,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+body {
+  line-height: 1.325;
+}
+
+// Ensure HTML5 elements are styled consistently
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+// Set a consistent line height and remove default spacing for headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+// Reset form elements
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+}
+
+// Remove the default button appearance
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+// Make images and media elements responsive by default
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+// Remove text decoration from links
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+
+
+

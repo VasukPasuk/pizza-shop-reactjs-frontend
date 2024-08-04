@@ -1,0 +1,360 @@
+@import '../../../styles/colors';
+@import '../../../styles/mixins';
+
+
+
+.product_description__error-container {
+  padding: 8rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product_description__loading-container {
+  padding: 8rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#product_description {
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--sides-offset);
+
+  .product_description__upper-bar {
+    margin: 1.25rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    @include media-custom(480px) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: start;
+      gap: .5rem;
+    }
+    .product_description__upper-bar__buttons-group {
+      display: flex;
+      flex-direction: row;
+      gap: .75rem;
+      button:nth-child(1) {
+        background: transparentize(blue, 0.25);
+      }
+
+      button:nth-child(2) {
+        background: transparentize(orangered, 0.25);
+      }
+      @include media-360 {
+        button {
+          padding: .5rem;
+        }
+      }
+    }
+  }
+
+  .product_description__content-box {
+    display: grid;
+    grid-template: auto / repeat(12, 1fr);
+    grid-auto-rows: auto;
+    gap: 1rem;
+
+    & > div {
+      background: var(--pizza-description-zones-bg);
+      border-radius: 0.25rem;
+    }
+
+    .product_description__image-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      grid-column: 1 / 6;
+      align-self: start;
+      padding: 1rem;
+      gap: 1.25rem;
+      img {
+        width: 100%;
+        border-radius: 0.5rem;
+        @include media-768 {
+          width: 80%;
+        }
+      }
+      .product_description__image-box__upper-bar {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        & > div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: .25rem;
+          padding: .25rem .5rem;
+          border-radius: .25rem;
+          background: rgba(255, 255, 255, 0.075);
+        }
+
+        & > div:nth-child(1) {
+          svg {
+            color: #FF6666;
+          }
+        }
+
+        & > div:nth-child(2) {
+          svg {
+            color: #C8FF2C;
+          }
+        }
+      }
+    }
+
+    .product_description__text-box {
+      display: flex;
+      flex-direction: column;
+      grid-column: 6 / end;
+      gap: .875rem;
+      padding: 1rem;
+
+      & > h1 {
+        font-size: clamp(1.325rem, 3dvw, 2rem);
+      }
+
+      .product_description__tags-box {
+        display: flex;
+        flex-direction: row;
+        gap: .875rem;
+        flex-wrap: wrap;
+
+        .product_description__tag {
+          padding: 0.25rem 0.75rem;
+          border-radius: 0.25rem;
+          background: rgba(255, 255, 255, 0.15);
+        }
+      }
+    }
+
+    .product_description__tabs-box {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      gap: 1rem;
+      padding: .5rem 1rem;
+      grid-column: 6 / end;
+      align-self: start;
+
+      .product_description__select-size-tab {
+        padding: 0.5rem 1.25rem;
+        border-radius: 0.25rem;
+        background: var(--pizza-description-zones-tab-bg);
+        transition: .25s ease background;
+
+        &:not([data-active-tab=true]):hover {
+          background: var(--pizza-description-zones-tab-bg-hover);
+          cursor: pointer;
+        }
+
+        &[data-active-tab=true] {
+          background: var(--pizza-description-zones-tab-bg-active);
+        }
+      }
+    }
+
+    .product_description__size-additional-box {
+      align-self: start;
+      grid-column: 6 / end;
+      gap: .875rem;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+
+      & > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: .5rem .75rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+        span:nth-child(2) {
+          font-size: 1.35rem;
+        }
+      }
+    }
+
+    .product_description__reviews-box {
+      grid-column: span 13;
+      display: flex;
+      flex-direction: column;
+      gap: .875rem;
+      padding: .5rem;
+
+      section {
+        background: transparentize(#445259, .7);
+        border-radius: .25rem;
+        padding: 0.5rem;
+      }
+
+      .product_description__reviews-box__upper-bar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .product_description__reviews-box__upper-bar__label {
+          font-size: 1.5rem;
+        }
+
+        .product_description__reviews-box__upper-bar__buttons-group {
+          display: flex;
+          flex-direction: row;
+          border-radius: .25rem;
+          overflow: hidden;
+          background: rgba(255, 255, 255, 0.075);
+
+          & > div {
+            padding: .5rem .75rem;
+            transition: .25s ease background;
+            cursor: pointer;
+
+            &:hover {
+              background: rgba(255, 255, 255, 0.1);
+            }
+          }
+        }
+      }
+
+      .product_description__reviews-box__create-comment-form {
+        display: flex;
+        flex-direction: column;
+        gap: .75rem;
+        padding: 1.25rem;
+
+        & > textarea {
+          padding: 0.5rem;
+          outline: none;
+          resize: none;
+          width: 100%;
+          border-radius: .25rem;
+        }
+
+        .product_description__reviews-box__create-comment-form__buttons {
+          display: flex;
+          flex-direction: row;
+          justify-content: right;
+          gap: .5rem;
+
+          li {
+            padding: .5rem .75rem;
+            background: #000;
+            border-radius: .25rem;
+            font-weight: 300;
+            cursor: pointer;
+
+            &:nth-child(1) {
+              background: transparentize(blue, 0.385);
+            }
+
+            &:nth-child(2) {
+              background: transparentize(red, 0.585);
+            }
+          }
+        }
+      }
+
+      .product_description__reviews-box__comments-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        .no-comments-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 2rem;
+          color: #858092;
+        }
+      }
+    }
+
+
+    @include media-768 {
+      grid-template: auto auto auto auto / repeat(12, 1fr);
+      grid-auto-rows: auto;
+      grid-auto-columns: 100%;
+      gap: 1rem 0;
+      .product_description__image-box {
+        grid-column: span 13;
+      }
+      .product_description__text-box {
+        grid-column: span 13;
+      }
+      .product_description__tabs-box {
+        grid-column: span 13;
+      }
+      .product_description__size-additional-box {
+        grid-column: span 13;
+      }
+      .product_description__reviews-box {
+        grid-column: span 13;
+      }
+    }
+  }
+}
+
+
+@include if-light-theme {
+  .product_description__image-box {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  .product_description__select-size-tab {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+
+    &[data-active-tab="true"] {
+      background: rgba(0, 0, 0, 0.025) !important;
+    }
+  }
+  .addbox__info-box {
+    box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  .product_description__tag {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+  }
+  .product_description__reviews-box__upper-bar {
+    background: transparent !important;
+
+    .product_description__reviews-box__upper-bar__buttons-group {
+      border: 1px solid $bg-neutral-300;
+
+      div:nth-child(2) {
+        border-left: 1px solid $bg-neutral-300;
+      }
+    }
+  }
+  .product_description__reviews-box__create-comment-form {
+    background: transparent !important;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+
+    textarea {
+      border: 1px solid $bg-neutral-300;
+    }
+
+    .product_description__reviews-box__create-comment-form__buttons {
+      li {
+        color: $bg-neutral-100;
+      }
+    }
+  }
+  .product_description__reviews-box__comments-container {
+    background: transparent !important;
+  }
+}
+
+@include if-dark-theme {
+  .product_description__reviews-box__create-comment-form {
+    textarea {
+      background: transparent !important;
+      border: 1px solid $bg-neutral-500;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import '../../../styles/colors';
+@import '../../../styles/static-variables';
+@import '../../../styles/mixins';
+
+button {
+  position: relative;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.225rem;
+  border: none;
+  outline: none;
+  border-radius: 0.25rem;
+  color: #{$bg-neutral-200} !important;
+  backdrop-filter: opacity(0.125);
+  &[data-variant='main'] {
+    @include bottom-accent-shadow($main-accent-color, 0.5);
+  }
+  &[data-variant='danger'] {
+    @include bottom-accent-shadow($danger-accent-color, 0.675);
+  }
+  &[data-variant='success'] {
+    @include bottom-accent-shadow($success-accent-color, 0.575);
+  }
+  &[data-variant='warning'] {
+    @include bottom-accent-shadow($warning-accent-color, 0.475);
+  }
+}

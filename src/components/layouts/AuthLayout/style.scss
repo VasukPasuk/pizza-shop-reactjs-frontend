@@ -1,0 +1,53 @@
+@import '../../../styles/colors';
+@import '../../../styles/static-variables';
+@import '../../../styles/mixins';
+
+.auth-page {
+  width: 100dvw;
+  height: 100dvh;
+  background: linear-gradient(45deg, rgb(0, 0, 235), rgb(0, 0, 107));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+  form {
+    z-index: 5;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    padding: 2rem;
+    border-radius: 0.25rem;
+    background: rgb(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    border: 1px solid white;
+    min-width: 450px;
+
+    .form-title {
+      font-size: 1.75rem;
+      font-weight: 600;
+    }
+
+    .go-to-label {
+      font-weight: 300;
+      a {
+        font-weight: 500;
+      }
+    }
+
+    button[type="submit"] {
+      padding: 1rem 2rem;
+      width: 100%;
+      border-radius: 0.25rem;
+      background: #fff;
+      color: #2d2d2d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 500;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@import '../../../styles/colors';
+@import '../../../styles/static-variables';
+@import '../../../styles/mixins';
+
+.form-input {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 0.25rem;
+  width: 100%;
+  background: rgba(255,255,255, 0.125);
+  input {
+    //color: $bg-gray-700;
+    color: white;
+    padding: 0.5rem 0.75rem;
+    outline: none;
+    width: 100%;
+    background: transparent;
+    font-weight: 300;
+    &::placeholder {
+      color: white;
+    }
+  }
+  .icon-box {
+    position: absolute;
+    right: 0;
+    transform: translateX(-50%);
+    svg {
+      //color: #2d2d2d;
+      color: white;
+      font-size: 1.225rem;
+    }
+  }
+}

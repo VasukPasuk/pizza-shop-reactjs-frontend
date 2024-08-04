@@ -1,0 +1,34 @@
+@import '../../../styles/colors';
+@import '../../../styles/static-variables';
+@import '../../../styles/mixins';
+
+.category-tabs-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 0.75rem;
+
+  .pill-tab-category {
+    color: var(--tabs-color);
+    padding: 0.5rem 1rem;
+    background: var(--tabs-default-bg-color);
+    transition: .5s ease-out background, .5s ease-out box-shadow , .5s ease-in-out transform;
+    border-radius: 0.25rem;
+    box-shadow:
+            2px 2px 5px var(--tabs-shadow),
+            0 0 2px var(--tabs-shadow);
+    &[data-active-link="true"] {
+      background: var(--tabs-hover-bg-color);
+    }
+  }
+}
+
+@include if-light-theme {
+  .pill-tab-category[data-active-link="true"] {
+    background: rgba(0,0,0,0.15);
+  }
+  .pill-tab-category:not([data-active-link="true"]):hover {
+    transform: scale(1.05);
+  }
+}
