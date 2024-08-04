@@ -8,7 +8,7 @@ interface ProtectedByAuth {
 }
 
 function ProtectedByAuth(props: ProtectedByAuth) {
-  const {isAuth} = useAppSelector((state:RootState) => state.user)
+  // const {isAuth} = useAppSelector((state:RootState) => state.user)
   const {children} = props;
   // if (!isAuth) {
   //   return <Navigate to={'/'}/>

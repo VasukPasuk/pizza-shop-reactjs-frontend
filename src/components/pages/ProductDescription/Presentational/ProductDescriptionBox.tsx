@@ -1,9 +1,9 @@
 import {useState} from 'react';
 import {SIZE} from "../../../../typing/enums.tsx";
-import {IAdditionalOption, ICategory, IPizza} from "../../../../redux/services/pizzaApi.ts";
 import {AiFillHeart} from "react-icons/ai";
 import {FaStar} from "react-icons/fa";
 import {transformUpperCaseToLow} from "../../../../features/transformUpperCaseToLow.ts";
+import {IAdditionalOption, ICategory, IPizza} from "../../../../typing/interfaces.tsx";
 
 interface IProductDescriptionBox {
   pizza: Partial<IPizza>
