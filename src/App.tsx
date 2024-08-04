@@ -1,5 +1,5 @@
 import router from './react-router/router.tsx';
-import { RouterProvider } from 'react-router-dom';
+import { RouterProvider , } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext.tsx';
 import {Provider} from "react-redux";
 import store from "./redux/store.tsx";
@@ -11,7 +11,9 @@ function App() {
     <>
       <Provider store={store}>
         <ThemeProvider>
-          <RouterProvider router={router}   />
+          <RouterProvider router={router}>
+
+          </RouterProvider>
         </ThemeProvider>
       </Provider>
     </>
