@@ -22,7 +22,6 @@ export interface IShopCard {
   inCart?: boolean;
   flour?: Flour;
   image?: string;
-  key?: any;
 }
 
 
@@ -58,7 +57,7 @@ export interface IPizza {
   id: number;
   name: string;
   description: string;
-  available: string;
+  available: boolean;
   category_name: string;
   country: string;
   discount: number;

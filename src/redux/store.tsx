@@ -4,11 +4,12 @@ import userReducer from './slices/User.slice.tsx'
 import {pizzaApi} from "./services/pizzaApi.ts";
 import {setupListeners} from "@reduxjs/toolkit/query";
 import {reviewApi} from "./services/reviewApi.ts";
-
+import modalReducer from './slices/Modal.slice.tsx'
 
 const store = configureStore({
   reducer: {
     user: userReducer,
+    modal: modalReducer,
     [pizzaApi.reducerPath]: pizzaApi.reducer,
     [reviewApi.reducerPath]: reviewApi.reducer,
   },

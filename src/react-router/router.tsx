@@ -21,20 +21,20 @@ import ProductDescription from "../components/pages/ProductDescription/ProductDe
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <MainLayout />,
+    element: <MainLayout/>,
     errorElement: <NotFoundErrorPage/>,
     children: [
       {
         path: '',
-        element: <MainPage />,
+        element: <MainPage/>,
       },
       {
         path: 'shop',
-        element: <ShopPage />,
+        element: <ShopPage/>,
       },
       {
         path: 'cart',
-        element: <CartPage />,
+        element: <CartPage/>,
       },
       {
         path: 'shop/pizza/:name',
@@ -47,13 +47,13 @@ const router = createBrowserRouter([
     element:
       <ProtectedByRole
         role="ADMIN"
-        children={<AdminLayout />}
+        children={<AdminLayout/>}
       />,
     errorElement: <NotFoundErrorPage/>,
     children: [
       {
         index: true,
-        element: <Dashboard />,
+        element: <Dashboard/>,
       },
       {
         path: 'products',
@@ -65,11 +65,11 @@ const router = createBrowserRouter([
       },
       {
         path: 'profile',
-        element: <Profile />,
+        element: <Profile/>,
       },
       {
         path: 'settings',
-        element: <Settings />,
+        element: <Settings/>,
       },
     ],
   },
@@ -100,6 +100,6 @@ const router = createBrowserRouter([
       },
     ]
   },
-], {basename: import.meta.env.BASE_URL},);
-
+],);
+//{basename: import.meta.env.BASE_URL}
 export default router;

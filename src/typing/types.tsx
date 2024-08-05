@@ -12,10 +12,12 @@ export type CaloriesStage = 'low' | 'medium' | 'high';
 
 export type Role = "ADMIN" | "CUSTOMER"
 
+export type SortOrder = 'asc' | 'desc'
+
 
 export type TPaginationQueryConfig = {
   limit: number
-  order: "asc" | "desc"
+  order: SortOrder
   page: number
 }
 

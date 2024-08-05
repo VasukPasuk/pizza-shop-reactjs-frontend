@@ -2,13 +2,14 @@
 @import "dark-theme-vars";
 @import "light-theme-vars";
 @import "dynamic-variables";
-
+@import "mixins";
 
 html {
   font-size: 16px;
 }
 
 body {
+  position: relative !important;
   min-height: 100%;
   background: var(--body-bg-color);
 
@@ -124,7 +125,42 @@ a {
 }
 
 
+::-webkit-scrollbar {
+  width: 8px;
+}
 
+@include if-dark-theme {
 
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #16121b;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #352e3e;
+    border-radius: 1rem;
+    &:hover {
+      background: #4b4256;
+    }
+  }
+}
+
+@include if-light-theme {
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background: #c4c4c4;
+    &:hover {
+      background: #d7d6d6;
+    }
+  }
+}
 
 

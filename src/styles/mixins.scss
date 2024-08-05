@@ -29,6 +29,21 @@
 }
 
 
+@mixin dark-theme--action-element-hover-effect {
+  &:hover {
+    background: transparentize(#fff, 0.95);
+    cursor: pointer;
+  }
+}
+
+@mixin light-theme--action-element-hover-effect {
+  &:hover {
+    background: transparentize(#000, 0.95);
+    cursor: pointer;
+  }
+}
+
+
 @mixin if-light-theme {
   html:has([data-theme="light"]) {
     @content

@@ -41,16 +41,6 @@
         background: transparent;
         transition: 0.325s background ease;
         border-radius: 0.5rem;
-
-        &:hover {
-          background: transparentize(#fff, 0.85);
-          cursor: pointer;
-        }
-
-        &[data-active="true"] {
-          background: transparentize(#fff, 0.75);
-        }
-
       }
     }
 
@@ -69,12 +59,32 @@
           display: none;
         }
       }
-
-      &:hover {
-        background: transparentize(#fff, 0.9);
-        cursor: pointer;
-      }
     }
   }
 }
 
+
+@include if-dark-theme {
+  .pagination-list {
+    & > li {
+      @include dark-theme--action-element-hover-effect;
+      &[data-active="true"] {
+        background: rgba(255,255,255,0.05);
+      }
+    }
+  }
+  .move-page-button {
+    @include dark-theme--action-element-hover-effect;
+  }
+}
+
+@include if-light-theme {
+  .pagination-list {
+    & > li {
+      @include light-theme--action-element-hover-effect;
+    }
+  }
+  .move-page-button {
+    @include light-theme--action-element-hover-effect;
+  }
+}

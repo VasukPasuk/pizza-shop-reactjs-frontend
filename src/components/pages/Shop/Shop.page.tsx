@@ -15,9 +15,10 @@ function ShopPage() {
   const [totalPages, setTotalPages] = useState<number>(26)
   const [pizzas, setPizzas] = useState<IPizza[]>([])
   const [getMany, {data, error, isLoading, isError, isUninitialized}] = useLazyGetManyPizzaQuery();
+
   useEffect(() => {
     getMany({category: currentCategory.toLowerCase(), limit: 8, order: "desc", page: 1, withlength: true})
-  }, [])
+  }, [currentCategory, getMany])
   useEffect(() => {
     if (!data || !data.items) return
     setPizzas(_ => data.items)

@@ -1,4 +1,4 @@
-import { useState} from 'react';
+import {useState} from 'react';
 import './style.scss';
 import {IShopCard} from '../../../typing/interfaces.tsx';
 import {FaEllipsisVertical} from 'react-icons/fa6';
@@ -7,16 +7,17 @@ import {FLOUR_TYPES, SIZES} from "../../../constants.ts";
 import {toast} from "react-toastify";
 import {Flour, Size} from "../../../typing/types.tsx";
 import {useNavigate} from "react-router-dom";
-
-
+import Modal from "../Modal/Modal.tsx";
 
 
 function ShopCard(props: IShopCard) {
-  const {key, category, size = 'medium', discount, flour, inCart, name, popular, price, image} = props;
+  const { category, size = 'medium', discount, flour, inCart, name, popular, price, image} = props;
   const [activeActionMenu, setActiveActionMenu] = useState<boolean>(false);
   const [pizzaSize, setPizzaSize] = useState<Size>(size)
   const [pizzaFlour, setPizzaFlour] = useState<Flour>(flour)
   const [pizzaInCart, setPizzaInCart] = useState<boolean>(inCart)
+
+  const [modal, setModal] = useState<boolean>(false)
 
   const onSelectFlourHandler = (flour: Flour) => () => {
     setPizzaFlour(() => flour)
@@ -27,9 +28,10 @@ function ShopCard(props: IShopCard) {
   }
 
   const onMainCardButtonHandler = () => {
-    toast.success(`Pizza successfully ${ inCart ? 'removed from' : 'added to' } cart.`, {
+    toast.success(`Pizza successfully ${inCart ? 'removed from' : 'added to'} cart.`, {
       autoClose: 2500
     })
+    setModal(true)
   }
 
   const onFaEllipsisVerticalClick = () => {
@@ -40,7 +42,6 @@ function ShopCard(props: IShopCard) {
     <div
       className="product-shop-cart"
       data-in-cart={Boolean(inCart)}
-      key={key}
     >
       <div className="tags-and-action-box">
         <div className="product-shop-cart__tags-box">
@@ -113,9 +114,11 @@ function ShopCard(props: IShopCard) {
           <span className="price-box__current-price">
             {price}
           </span>
-          {!!discount && <div className="price-box__previous-price">
-            {discount}$
-	        </div>}
+          {!!discount && (
+            <div className="price-box__previous-price">
+              {discount}$
+            </div>
+          )}
         </div>
         <Button
           variant={inCart ? 'warning' : 'main'}
@@ -124,6 +127,9 @@ function ShopCard(props: IShopCard) {
           {inCart ? 'Remove' : 'Add to cart'}
         </Button>
       </div>
+      <Modal state={modal} stateFunc={setModal}>
+        Test
+      </Modal>
     </div>
   );
 }
@@ -139,10 +145,17 @@ type ShopCardActionMenuProps = {
   setActiveActionMenu: Function;
 }
 
-function ShopCardActionMenu({name,inCart, setSize, inCartHandler, activeActionMenu, setActiveActionMenu}:ShopCardActionMenuProps) {
+function ShopCardActionMenu({
+                              name,
+                              inCart,
+                              setSize,
+                              inCartHandler,
+                              activeActionMenu,
+                              setActiveActionMenu
+                            }: ShopCardActionMenuProps) {
   const navigate = useNavigate()
 
-  const addToFavouritesHandler = ():void => {
+  const addToFavouritesHandler = (): void => {
 
   }
 

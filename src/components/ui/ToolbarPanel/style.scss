@@ -104,10 +104,7 @@ html:has([data-theme="dark"]) {
   }
   #toolbar-panel {
     .tool-button {
-      &:hover {
-        background: transparentize(#fff, 0.75);
-        cursor: pointer;
-      }
+      @include dark-theme--action-element-hover-effect;
     }
   }
 
@@ -119,10 +116,7 @@ html:has([data-theme="light"]) {
   }
   #toolbar-panel {
     .tool-button {
-      &:hover {
-        background: transparentize(#000, 0.925);
-        cursor: pointer;
-      }
+      @include light-theme--action-element-hover-effect;
     }
   }
 }
