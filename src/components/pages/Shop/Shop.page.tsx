@@ -17,8 +17,8 @@ function ShopPage() {
   const [getMany, {data, error, isLoading, isError, isUninitialized}] = useLazyGetManyPizzaQuery();
 
   useEffect(() => {
-    getMany({category: currentCategory.toLowerCase(), limit: 8, order: "desc", page: 1, withlength: true})
-  }, [currentCategory, getMany])
+    getMany({category: currentCategory.toLowerCase(), limit: 8, order: "desc", page: currentPage, withlength: true})
+  }, [currentCategory,currentPage, getMany])
   useEffect(() => {
     if (!data || !data.items) return
     setPizzas(_ => data.items)

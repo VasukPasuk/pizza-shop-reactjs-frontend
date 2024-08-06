@@ -7,7 +7,6 @@ import {FLOUR_TYPES, SIZES} from "../../../constants.ts";
 import {toast} from "react-toastify";
 import {Flour, Size} from "../../../typing/types.tsx";
 import {useNavigate} from "react-router-dom";
-import Modal from "../Modal/Modal.tsx";
 
 
 function ShopCard(props: IShopCard) {
@@ -16,8 +15,6 @@ function ShopCard(props: IShopCard) {
   const [pizzaSize, setPizzaSize] = useState<Size>(size)
   const [pizzaFlour, setPizzaFlour] = useState<Flour>(flour)
   const [pizzaInCart, setPizzaInCart] = useState<boolean>(inCart)
-
-  const [modal, setModal] = useState<boolean>(false)
 
   const onSelectFlourHandler = (flour: Flour) => () => {
     setPizzaFlour(() => flour)
@@ -31,7 +28,6 @@ function ShopCard(props: IShopCard) {
     toast.success(`Pizza successfully ${inCart ? 'removed from' : 'added to'} cart.`, {
       autoClose: 2500
     })
-    setModal(true)
   }
 
   const onFaEllipsisVerticalClick = () => {
@@ -127,9 +123,6 @@ function ShopCard(props: IShopCard) {
           {inCart ? 'Remove' : 'Add to cart'}
         </Button>
       </div>
-      <Modal state={modal} stateFunc={setModal}>
-        Test
-      </Modal>
     </div>
   );
 }

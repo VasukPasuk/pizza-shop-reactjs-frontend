@@ -9,8 +9,7 @@ interface ProtectedByRole {
 }
 
 function ProtectedByRole(props: ProtectedByRole) {
-  // const user_role = useAppSelector((state:RootState) => state.user.data.role)
-  const user_role: Role = "CUSTOMER"
+  const user_role = useAppSelector((state:RootState) => state.user.user.role)
   const {children, role} = props;
   if (user_role !== role) {
     return <Navigate to={'/'}/>

@@ -1,16 +1,23 @@
 @import '../../../styles/static-variables';
 
-.content-wrapper {
+$a-l-height: calc(100vh - $header-height);
+
+#admin-layout {
   display: flex;
   flex-direction: row;
-  min-height: calc(100vh - $header-height);
-
-  .main-wrapper {
-    border-left: 1px solid $borders-color;
-    width: 100%;
-    min-height: calc(100vh - $header-height);
+  .content-wrapper {
     display: flex;
-    flex-direction: column;
-    overflow-y: auto;
+    flex-direction: row;
+    min-height: $a-l-height;
+    width: calc(100% - $drawer-width);
+    .main-wrapper {
+      border-left: 1px solid $light-theme-border-color;
+      width: 100%;
+      min-height: $a-l-height;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
   }
 }
+

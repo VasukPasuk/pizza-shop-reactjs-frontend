@@ -77,7 +77,7 @@ function ToolbarPanel() {
         <FilterContainer/>
       </Modal>
       <Modal state={sortModal} stateFunc={setSortModal}>
-        <SortContainer/>
+        <SortContainer closeModal={setFilterModal}/>
       </Modal>
     </>
 

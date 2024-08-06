@@ -12,7 +12,7 @@ const initialState: IUserReduxState = {
   user: {
     id: 0,
     login: "",
-    role: "CUSTOMER"
+    role: "ADMIN"
   },
   profile: {
     city: "",
